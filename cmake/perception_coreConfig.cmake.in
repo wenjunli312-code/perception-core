@@ -6,3 +6,8 @@ find_dependency(sensor-abstraction REQUIRED)
 find_dependency(Eigen3 CONFIG)
 
 include("${CMAKE_CURRENT_LIST_DIR}/perception_coreTargets.cmake")
+
+# Provide alias perception-core::perception-core (hyphen) -> perception_core::perception_core (underscore)
+if(NOT TARGET perception-core::perception-core)
+  add_library(perception-core::perception-core ALIAS perception_core::perception_core)
+endif()
