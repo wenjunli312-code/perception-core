@@ -32,7 +32,7 @@ target_link_libraries(perception_core
 include(GNUInstallDirs)
 
 install(TARGETS perception_core
-    EXPORT perception_coreTargets
+    EXPORT perception-coreTargets
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
@@ -40,30 +40,30 @@ install(DIRECTORY include/perception_core
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
-install(EXPORT perception_coreTargets
-    FILE perception_coreTargets.cmake
+install(EXPORT perception-coreTargets
+    FILE perception-coreTargets.cmake
     NAMESPACE perception_core::
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/perception_core
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/perception-core
 )
 
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/perception_coreConfig.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/perception_coreConfig.cmake
-    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/perception_core
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/perception-coreConfig.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/perception-coreConfig.cmake
+    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/perception-core
 )
 
 write_basic_package_version_file(
-    ${CMAKE_CURRENT_BINARY_DIR}/perception_coreConfigVersion.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/perception-coreConfigVersion.cmake
     VERSION ${PROJECT_VERSION}
     COMPATIBILITY SameMajorVersion
 )
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/perception_coreConfig.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/perception_coreConfigVersion.cmake
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/perception_core
+    ${CMAKE_CURRENT_BINARY_DIR}/perception-coreConfig.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/perception-coreConfigVersion.cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/perception-core
 )
 
 # Tests
