@@ -4,11 +4,17 @@
 #include <algorithm>
 #include <cmath>
 
+#define LOG_INFO(...)   // stub
+#define LOG_DEBUG(...)  // stub
+
 namespace perception_core {
 
-ObjectFusion::ObjectFusion(const Config& config)
-    : config_(config)
-{
+ObjectFusion::ObjectFusion() : config_() {
+    LOG_INFO("ObjectFusion initialised (assoc_thresh={:.2f}, lidar_w={:.2f})",
+             config_.association_threshold, config_.lidar_weight);
+}
+
+ObjectFusion::ObjectFusion(const Config& config) : config_(config) {
     LOG_INFO("ObjectFusion initialised (assoc_thresh={:.2f}, lidar_w={:.2f})",
              config_.association_threshold, config_.lidar_weight);
 }

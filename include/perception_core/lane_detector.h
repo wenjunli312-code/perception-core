@@ -22,9 +22,12 @@ public:
         int   roi_top_y         = 360;  // pixels from top where ROI starts
         float confidence_thresh = 0.6f;
         int   poly_degree       = 3;    // polynomial degree for lane fitting
+
+        Config() = default;
     };
 
-    explicit LaneDetector(const Config& config = {});
+    LaneDetector();
+    explicit LaneDetector(const Config& config);
     ~LaneDetector();
 
     // Detect lane lines in a camera frame.

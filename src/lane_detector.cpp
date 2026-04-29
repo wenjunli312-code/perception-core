@@ -1,12 +1,18 @@
 #include <perception_core/lane_detector.h>
 #include <common_utils/logger.h>
+
+#define LOG_INFO(...)  // stub
+#define LOG_DEBUG(...) // stub
 #include <Eigen/QR>
 
 namespace perception_core {
 
-LaneDetector::LaneDetector(const Config& config)
-    : config_(config)
-{
+LaneDetector::LaneDetector() : config_() {
+    LOG_INFO("LaneDetector initialised (roi_top_y={}, conf_thresh={:.2f})",
+             config_.roi_top_y, config_.confidence_thresh);
+}
+
+LaneDetector::LaneDetector(const Config& config) : config_(config) {
     LOG_INFO("LaneDetector initialised (roi_top_y={}, conf_thresh={:.2f})",
              config_.roi_top_y, config_.confidence_thresh);
 }

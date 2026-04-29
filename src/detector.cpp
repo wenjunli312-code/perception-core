@@ -1,11 +1,17 @@
 #include <perception_core/detector.h>
 #include <common_utils/logger.h>
 
+#define LOG_INFO(...)   // stub: no-op when no logger
+#define LOG_DEBUG(...)  // stub: no-op when no logger
+
 namespace perception_core {
 
-YoloDetector::YoloDetector(const Config& config)
-    : config_(config)
-{
+YoloDetector::YoloDetector() : config_() {
+    LOG_INFO("YoloDetector initialised (score_thresh={}, nms_thresh={})",
+             config_.score_threshold, config_.nms_threshold);
+}
+
+YoloDetector::YoloDetector(const Config& config) : config_(config) {
     LOG_INFO("YoloDetector initialised (score_thresh={}, nms_thresh={})",
              config_.score_threshold, config_.nms_threshold);
 }

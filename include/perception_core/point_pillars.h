@@ -28,9 +28,12 @@ public:
         float point_cloud_range_x_max =  39.68f;
         float point_cloud_range_y_min = -39.68f;
         float point_cloud_range_y_max =  39.68f;
+
+        Config() = default;
     };
 
-    explicit PointPillarsDetector(const Config& config = {});
+    PointPillarsDetector();
+    explicit PointPillarsDetector(const Config& config);
     ~PointPillarsDetector();
 
     // Run detection on a LiDAR point cloud frame and return 3D objects.

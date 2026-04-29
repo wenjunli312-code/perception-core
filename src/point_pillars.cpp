@@ -1,11 +1,17 @@
 #include <perception_core/point_pillars.h>
 #include <common_utils/logger.h>
 
+#define LOG_INFO(...)   // stub
+#define LOG_DEBUG(...)  // stub
+
 namespace perception_core {
 
-PointPillarsDetector::PointPillarsDetector(const Config& config)
-    : config_(config)
-{
+PointPillarsDetector::PointPillarsDetector() : config_() {
+    LOG_INFO("PointPillarsDetector initialised (score_thresh={})",
+             config_.score_threshold);
+}
+
+PointPillarsDetector::PointPillarsDetector(const Config& config) : config_(config) {
     LOG_INFO("PointPillarsDetector initialised (score_thresh={})",
              config_.score_threshold);
 }

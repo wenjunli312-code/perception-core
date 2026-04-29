@@ -25,9 +25,12 @@ public:
         // Kalman-filter-style weights for position blending
         float camera_weight = 0.3f;
         float lidar_weight  = 0.7f;
+
+        Config() = default;
     };
 
-    explicit ObjectFusion(const Config& config = {});
+    ObjectFusion();
+    explicit ObjectFusion(const Config& config);
 
     // Fuse camera detections and LiDAR objects into a unified list.
     std::vector<FusedObject> fuse(

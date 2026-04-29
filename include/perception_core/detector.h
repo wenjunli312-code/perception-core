@@ -23,9 +23,12 @@ public:
         float nms_threshold   = 0.45f;
         int   input_width     = 640;
         int   input_height    = 640;
+
+        Config() = default;
     };
 
-    explicit YoloDetector(const Config& config = {});
+    YoloDetector();  // default-construct Config internally
+    explicit YoloDetector(const Config& config);
     ~YoloDetector();
 
     // Run detection on a camera frame and return bounding boxes.
