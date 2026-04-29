@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <perception_core/detector.h>
-#include <sensor_abstraction/camera_frame.h>
+#include <sensor_abstraction/camera.h>
 
 namespace {
 

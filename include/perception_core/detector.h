@@ -1,6 +1,6 @@
 #pragma once
 
-#include <sensor_abstraction/camera_frame.h>
+#include <sensor_abstraction/camera.h>
 #include <vector>
 #include <string>
 
